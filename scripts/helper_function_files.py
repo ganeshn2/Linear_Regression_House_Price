@@ -1,4 +1,3 @@
-import pandas as pd
 import numpy as np
 from matplotlib import pyplot as plt
 from scipy.stats.mstats import normaltest
@@ -28,6 +27,19 @@ def normality_test(X):
     bc_price = bc_X[0]
     bc_value = normaltest(bc_price)
     return log_value,sqrt_value,bc_value
+
+
+def boxcox_test(X):
+    bc_X = boxcox(X)
+    bc_price = bc_X[0]
+    bc_lam = bc_X[1]
+    return bc_price, bc_lam
+
+
+
+
+
+
 
 
 
